@@ -22,8 +22,6 @@ const create_linked_list = (arr) => {
     return first
 }
 
-let first = create_linked_list([1, 2, 3, 4, 5])
-
 const display_linked_list = (first) => {
     let current = first
     while(current !== null){
@@ -39,4 +37,48 @@ const display_linked_list_rec = (current) => {
     }
 }
 
+const counting_nodes_linked_list = (first) => {
+    let current = first
+    let count = 0
+    while(current !== null){
+        count++
+        current = current.next
+    }
+
+    return count
+}
+
+const counting_nodes_linked_list_rec = (first) => {
+    if(first === null){
+        return 0
+    }else {
+        return counting_nodes_linked_list_rec(first.next) + 1
+    }
+}
+
+const sum_nodes_values_linked_list = (first) => {
+    let current = first
+    let sum = 0
+    while(current !== null){
+        sum += current.data
+        current = current.next
+    }
+
+    return sum
+}
+
+// const sum_nodes_values_linked_list_rec = (first) => {
+//     if(first === null){
+//         return 0
+//     }else {
+//         return counting_nodes_linked_list_rec(first.next) + first.data
+//     }
+// }
+
+
+let first = create_linked_list([1, 2, 3, 4, 5])
+
 display_linked_list_rec(first)
+
+//console.log('Count: ',counting_nodes_linked_list_rec(first))
+console.log('Sum: ', sum_nodes_values_linked_list(first))
