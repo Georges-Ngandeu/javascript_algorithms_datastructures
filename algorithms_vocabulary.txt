@@ -16,6 +16,8 @@ LinkedList
 14) search_linked_list_rec
 15) search_linked_list_improv
 16) insert_linked_list
+17) insert_last
+18) insert_sorted_linled_list
 
 ---------------------------------------------
 1)

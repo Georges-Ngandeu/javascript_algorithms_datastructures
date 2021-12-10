@@ -166,16 +166,45 @@ const insert_node = (first, key, pos) => {
     }
 }
 
-let first = create_linked_list([1, 2, 3, 4, 5])
+const insert_last = (key, first = null) => {
+    let current = new Node(key)
+    if(first === null){
+        first = current
+        last = current
+    }else {
+        last.next = current
+        last = current
+    }
 
-//display_linked_list(first)
+    return first
+} 
 
-//first = insert_node(first, 6, 0)
-first = insert_node(first, 8, 5)
+const insert_sorted_linkedlist = (key, first) => {
+    let current = first
+    let previous = null
+
+    while(current !== null && current.data < key){
+        previous = current
+        current = current.next
+    }
+
+    let temp = new Node(key)
+    temp.next = current
+    previous.next = temp
+
+    return first
+}
+
+//let first = create_linked_list([1, 2, 3, 4, 5])
+
+first = insert_last(0) 
+first = insert_last(1, first) 
+first = insert_last(2, first) 
+first = insert_last(3, first) 
+first = insert_last(9, first) 
+
+first = insert_sorted_linkedlist(8, first)
+first = insert_sorted_linkedlist(7, first)
+first = insert_sorted_linkedlist(6, first)
 
 display_linked_list(first)
-//console.log('Count: ',counting_nodes_linked_list_rec(first))
-//console.log('Sum: ', sum_nodes_values_linked_list_rec(first))
-//console.log('Max: ', find_max_linked_list(first))
-//console.log('Min: ', find_min_linked_list(first))
-//first = search_linked_list_improv(first, 3)
