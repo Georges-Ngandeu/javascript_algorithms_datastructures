@@ -9,6 +9,13 @@ LinkedList
 7) counting_nodes_linked_list
 8) counting_nodes_linked_list_rec
 9) sum_nodes_values_linked_list
+10) find_max_linked_list
+11) find_min_linked_list
+12) find_max_linked_list_rec
+13) search_linked_list
+14) search_linked_list_rec
+15) search_linked_list_improv
+16) insert_linked_list
 
 ---------------------------------------------
 1)
