@@ -1,0 +1,31 @@
+LinkedList
+----------------------------------------------
+1) traverse_linkedlist
+2) create_linkedlist
+3) display_linkedlist
+4) display_linkedlist_rec
+5) display_linkedlist_rev_rec
+6) tracing tree of recursive display
+
+---------------------------------------------
+1)
+const traverse = (head) => {
+    let current = head
+    while(current !== null){
+        current = current.next
+    }
+}
+
+2)
+const create = (arr) => {
+    let first = Node(arr[0])
+    let last = first
+
+    for(let i=1; i<arr.length; i++){
+        let temp = new Node(arr[i])
+        last.next = temp
+        last = temp 
+    }
+
+    return first
+}
