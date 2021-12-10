@@ -6,6 +6,9 @@ LinkedList
 4) display_linkedlist_rec
 5) display_linkedlist_rev_rec
 6) tracing tree of recursive display
+7) counting_nodes_linked_list
+8) counting_nodes_linked_list_rec
+9) sum_nodes_values_linked_list
 
 ---------------------------------------------
 1)
