@@ -17,27 +17,9 @@ LinkedList
 15) search_linked_list_improv
 16) insert_linked_list
 17) insert_last
-18) insert_sorted_linled_list
+18) insert_sorted_linked_list
+19) delete_node_linked_list
+20) is_linkedlist_sorted
+21) remove_duplicate_sorted_linkedlist
 
 ---------------------------------------------
-1)
-const traverse = (head) => {
-    let current = head
-    while(current !== null){
-        current = current.next
-    }
-}
-
-2)
-const create = (arr) => {
-    let first = Node(arr[0])
-    let last = first
-
-    for(let i=1; i<arr.length; i++){
-        let temp = new Node(arr[i])
-        last.next = temp
-        last = temp 
-    }
-
-    return first
-}

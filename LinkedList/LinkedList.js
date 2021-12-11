@@ -195,16 +195,86 @@ const insert_sorted_linkedlist = (key, first) => {
     return first
 }
 
+const delete_first_node = (first) => {
+    let current = first
+    first = first.next
+    delete current
+   
+    return first
+}
+
+const delete_node = (first, pos) => {
+
+    if(pos < 1 ){
+        return -1
+    }
+
+    if(pos === 1){
+        let current = first
+        first = first.next
+        delete current
+    }else{
+        let current = first
+        let previous = null
+        while(current !== null && pos > 1){
+            previous = current
+            current = current.next
+            pos--
+        }
+
+        previous.next = current.next
+        delete current
+    } 
+
+    return first
+}
+
+const is_list_sorted = (first) => {
+    let current = first
+    let previous = first
+    while(current !== null){
+        if(previous.data > current.data){
+            return false
+        }
+        previous = current
+        current = current.next
+    }
+
+    return true
+}
+
+const remove_duplicate = (first) => {
+    let current = first.next
+    let previous = first
+
+    while(current !== null){
+        if(previous.data === current.data){ 
+            previous.next = current.next
+            delete current
+            current = previous.next
+        }
+        previous = current
+        current = current.next
+    }
+
+    return first
+}
+
 //let first = create_linked_list([1, 2, 3, 4, 5])
 
 first = insert_last(0) 
 first = insert_last(1, first) 
+first = insert_last(1, first) 
 first = insert_last(2, first) 
+first = insert_last(2, first) 
+first = insert_last(3, first) 
 first = insert_last(3, first) 
 first = insert_last(9, first) 
 
-first = insert_sorted_linkedlist(8, first)
-first = insert_sorted_linkedlist(7, first)
-first = insert_sorted_linkedlist(6, first)
+display_linked_list(first)
+first = remove_duplicate(first)
 
+console.log('--------------------------------')
+
+//console.log('result: ', is_list_sorted(first))
 display_linked_list(first)
