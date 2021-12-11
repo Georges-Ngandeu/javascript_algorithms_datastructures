@@ -21,5 +21,9 @@ LinkedList
 19) delete_node_linked_list
 20) is_linkedlist_sorted
 21) remove_duplicate_sorted_linkedlist
-
+22) reverse_linkedlist_extra_array
+23) reverse_linkedlist_links
+24) reverse_linkedlist_rec
+25) merge_sorted_linkedlist
+26) is_loop
 ---------------------------------------------

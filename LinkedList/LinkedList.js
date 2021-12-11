@@ -243,7 +243,7 @@ const is_list_sorted = (first) => {
     return true
 }
 
-const remove_duplicate = (first) => {
+const remove_duplicate_sorted = (first) => {
     let current = first.next
     let previous = first
 
@@ -251,7 +251,7 @@ const remove_duplicate = (first) => {
         if(previous.data === current.data){ 
             previous.next = current.next
             delete current
-            current = previous.next
+            current = previous
         }
         previous = current
         current = current.next
@@ -260,21 +260,129 @@ const remove_duplicate = (first) => {
     return first
 }
 
+const reverse_linkedlist_extra_array = (first) => {
+    let current = first
+    let A = []
+    let count = 0
+
+    while(current !== null) {
+        A.push(current.data)
+        count++
+        current = current.next 
+    }
+    
+    current = first
+    count--
+    while(current !== null){
+        current.data = A[count]
+        count--
+        current.next
+    }
+
+    return first
+}
+
+const reverse_linkedlist_links = (first) => {
+    let previous = null
+    let current = null
+    let next = first
+
+    while(next !== null){
+        previous = current
+        current = next
+        next = next.next
+        current.next = previous
+    }
+
+    first = current
+
+    return first
+}
+
+const reverse_linkedlist_rec = (first, previous, current) => {
+    if(current!== null){
+        reverse_linkedlist_rec(current, current.next)
+        current.next = previous
+    }else{
+        first = previous
+    }
+}
+
+const concatenate_linkedlist = (first, second) => {
+    let current = first
+    while(current.next !== null){
+        current = current.next
+    }
+
+    current.next = second
+
+    return first
+}
+
+const merge_sorted_linkedlist = (first, second) => {
+    let third = null
+    let last = null
+    if(first.data < second.data){
+        third = first
+        last = first
+        first = first.next
+        last.next = null
+    }else{
+        third = second
+        last = second
+        second = second.next
+        last.next = null
+    }
+
+    while(first !== null && second !== null){
+        if(first.data < second.data){
+            last.next = first
+            last = first
+            first = first.next
+            last.next = null
+        }else{
+            last.next = second
+            last = second
+            second = second.next
+            last.next = null
+        }
+    }
+
+    if(first === null){
+        last.next = second
+    }else{
+        last.next = first
+    }
+
+    return third
+}
+
+const is_loop = (first) => {
+    let fast = first
+    let slow = first
+
+    while(fast !== null && fast.next !== null){
+        slow = slow.next
+        fast = fast.next.next
+        if(fast === slow){
+            return true
+        }
+    }
+
+    return false
+}
 //let first = create_linked_list([1, 2, 3, 4, 5])
 
 first = insert_last(0) 
 first = insert_last(1, first) 
-first = insert_last(1, first) 
 first = insert_last(2, first) 
-first = insert_last(2, first) 
-first = insert_last(3, first) 
 first = insert_last(3, first) 
 first = insert_last(9, first) 
 
 display_linked_list(first)
-first = remove_duplicate(first)
 
 console.log('--------------------------------')
 
-//console.log('result: ', is_list_sorted(first))
-display_linked_list(first)
+//first = reverse_linkedlist_links(first)
+console.log(is_loop(first))
+//display_linked_list(first)
