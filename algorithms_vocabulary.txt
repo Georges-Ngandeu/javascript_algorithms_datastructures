@@ -1,5 +1,6 @@
+--------------------------------------------------
 LinkedList
-----------------------------------------------
+--------------------------------------------------
 1) traverse_linkedlist
 2) create_linkedlist
 3) display_linkedlist
@@ -26,4 +27,69 @@ LinkedList
 24) reverse_linkedlist_rec
 25) merge_sorted_linkedlist
 26) is_loop
+------------------------------------------------
+Matrices
+------------------------------------------------
+1) setDiagonalMatrice
+2) getDiagonalMatrice
+3) displayDiagonalMatrice
+4) setLowerTriangularMatrice
+5) getLowerTriangularMatrice
+6) displaytLowerTriangularMatrice
+4) setUpperTriangularMatrice
+5) getUpperTriangularMatrice
+6) displayUpperTriangularMatrice
+) tridiagonalMatrice
+
+lower triangular matrice/row major
+non zero = n(n+1)/2
+zero = n(n-1)/2
+row_major-index =  i(i-1)/2 + j-1
+----------------------------------------------
+Trees
+----------------------------------------------
+ ) binary tree 
+ ) n ary binary tree 
+ ) full binary tree 
+ ) strict binary tree 
+ ) complete binary tree 
+ ) max and min nodes of binary tree when h is given 
+ ) hmax and hmin heigth of binary tree when nodes n is given 
+1) preorder_traversal
+2) inorder_traversal
+3) postorder_traversal
+4) counting_nodes
+5) creating_tree
+--------------------------------------------------
+Binary Search Trees
+------------------------------------------------
+1) binary_search
+-----------------------------------------------
+Queue
 ---------------------------------------------
+1) Queue with arrays
+    1) enqueue
+    2) dequeue
+    3) is_full
+    4) is_empty
+2) Queue with linkedList
+    1) enqueue
+    2) dequeue
+    3) is_full
+    4) is_empty
+----------------------------------------------------------
+Stack
+---------------------------------------------------------
+1) Stack with arrays
+    1) enqueue
+    2) dequeue
+    3) is_full
+    4) is_empty
+2) Stack with linkedList
+    1) push
+    2) pop
+    3) is_full
+    4) is_empty
+    5) peek(index)
+    6) stackTop
+
